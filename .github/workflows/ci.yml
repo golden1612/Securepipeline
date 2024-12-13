@@ -23,3 +23,7 @@ jobs:
         run: |
           if [ -f requirements.txt ]; then pip install pytest; fi
           pytest || echo "No tests found"
+      - name: Run Bandit (SAST)
+        run: |
+          pip install bandit
+          bandit -r .
