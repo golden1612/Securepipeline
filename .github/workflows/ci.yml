@@ -27,3 +27,7 @@ jobs:
         run: |
           pip install bandit
           bandit -r .
+  - name: Check dependencies (Safety)
+    run: |
+      pip install safety
+      safety check --full-report
